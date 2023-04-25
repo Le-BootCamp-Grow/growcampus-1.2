@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow 1.0 | Gallery</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            margin: 0 auto;
+        }
+        .main {
+            width: 100%;
+            /* height: 100vh; */
+        }
+        .gallery {
+            width: 100%;
+            /* height: 100%; */
+            padding: 12px 4px;
+            display: flex;
+            flex-direction: row;
+            /* align-items: center; */
+            justify-content: center;
+            /* column-gap: 10px; */
+            column-gap: .5rem;
+            /* flex-wrap: wrap; */
+        }
+        .row {
+            display: grid;
+            row-gap: 1rem;
+        }
+        .gallery-image /*img*/ {
+            width: 400px;
+            height: fit-content;
+            vertical-align: middle;
+            /* margin-top: 8px; */
+            position: relative;
+        }
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+            /* margin-top: 8px;
+            padding: 0 4px; */
+        }
+        .gallery-image p {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5));
+            position: absolute;
+            margin: 0 auto;
+            display: flex;
+            color: white;
+            font-size: 1.5rem;
+            font-family: 'Roboto', sans-serif;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: .5s;
+        }
+        .gallery-image p:hover {
+            opacity: .85;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="gallery">
+            <div class="row">
+                <div class="gallery-image">
+                    <p>Cliquez sur l'image</p>
+                    <img src="./627ec6be37095d4aed1f3fd1_a-place-for-creative-discovery.jpeg" alt="">
+                </div>
+                <div class="gallery-image">
+                    <p>Cliquez sur l'image</p>
+                    <img src="./Filters_preset_03_997x1422.jpg" alt="">
+                </div>
+                <div class="gallery-image">
+                    <p>Cliquez sur l'image</p>
+                    <img src="./930fd702382eb3564e7ee9556de14c51.jpg" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="gallery-image">
+                    <p>Cliquez sur l'image</p>
+                    <img src="./e785de451ef377349afdf04952ff0158.jpg" alt="">
+                </div>
+                <div class="gallery-image">
+                    <p>Cliquez sur l'image</p>
+                    <img src="./930fd702382eb3564e7ee9556de14c51.jpg" alt="">
+                </div>
+                <div class="gallery-image">
+                    <p>Cliquez sur l'image</p>
+                    <img src="./Filters_preset_03_997x1422.jpg" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="gallery-image">
+                    <p>Cliquez sur l'image</p>
+                    <img src="./Filters_preset_03_997x1422.jpg" alt="">
+                </div>
+                <div class="gallery-image">
+                    <p>Cliquez sur l'image</p>
+                    <img src="./e785de451ef377349afdf04952ff0158.jpg" alt="">
+                </div>
+                <div class="gallery-image">
+                    <p>Cliquez sur l'image</p>
+                    <img src="./627ec6be37095d4aed1f3fd1_a-place-for-creative-discovery.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

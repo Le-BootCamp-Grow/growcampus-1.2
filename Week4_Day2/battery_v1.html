@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery Charging</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            min-height: 90vh;
+            display: grid;
+            grid-template-columns: 260px 50px;
+            grid-template-rows: 1fr;
+        }
+
+        .battery {
+            width: 140px;
+            height: 260px;
+            border: thick solid #1c1c1c;
+            position: relative;
+        }
+
+        .battery-level {
+            width: 100%;
+            height: 90%;
+            background-color: #1c1c1c;
+        }
+
+        .battery-head {
+            width: 30px;
+            height: 70px;
+            background-color: #1c1c1c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="battery">
+        <div class="battery-level"></div>
+    </div>
+
+    <div class="battery-head"></div>
+
+
+    <script>
+        const batteryLevel = document.querySelector('.battery-level');
+
+        let chargeLevel = 0;
+        let charging = true;
+
+        // ...
+
+    </script>
+</body>
+
+</html>

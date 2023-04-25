@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery Charging 2</title>
+    <script src="https://kit.fontawesome.com/3357889f5c.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column-reverse;
+            background-color: #0c0914;
+            /* ajoutez d'autres styles... */
+        }
+
+        .battery-container {
+            width: 220px;
+            height: 360px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            /* ajoutez d'autres styles... */
+        }
+
+        .battery-level {
+            width: 95%;
+            /* height: 0%; */
+            height: 50%;
+            background-color: rgba(142, 73, 221, 0.8);
+            transition: height .5s linear;
+            /* ajoutez d'autres styles... */
+        }
+
+        .battery-head {
+            width: 140px;
+            height: 45px;
+            /* ajoutez d'autres styles... */
+        }
+
+        .battery-text {
+            /* ajoutez des styles... */
+        }
+
+        .fa-bolt {
+            font-size: 48px;
+            position: absolute;
+            color: #fff;
+            /* ajoutez d'autres styles... */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="battery-text" id="battery-text">0%</div>
+    <div class="battery-container">
+        <div class="battery-level" id="battery-level"></div>
+        <i class="fa-solid fa-bolt"></i>
+    </div>
+    <div class="battery-head"></div>
+
+    <script>
+        const batteryLevel = document.getElementById('battery-level');
+        const batteryText = document.getElementById('battery-text');
+
+        // ...
+
+    </script>
+</body>
+
+</html>
