@@ -1,0 +1,54 @@
+body,
+html {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #e5eaef;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+main {
+    background-color: #fffff9;
+    width: 20%;
+    height: 75vh;
+    margin: 40px auto;
+    padding: 4px 18px;
+    border-radius: 15px;
+    box-shadow: 2px 4px 8px 3px rgba(0, 0, 0, 0.125);
+}
+.screen {
+    width: 97.5%;
+    margin: 0 auto;
+    background-color: #f2f5f7;
+    height: 5em;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    text-align: end;
+    padding: 10px 16px;
+    box-sizing: border-box;
+}
+/* .screen > p {
+    font-size: 2rem;
+} */
+.buttons {
+    width: 100%;
+    height: fit-content;
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-items: center;
+}
+button {
+    width: 4em;
+    height: 4em;
+    border-radius: 20%;
+    border: thin solid #1c1c1c;
+    color: whitesmoke;
+    background-color: #1c1c1c;
+}

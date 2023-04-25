@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #3C1687;
+    /* padding: 2rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Mono', monospace;
+}
+
+.mobile {
+    width: 20rem;
+    /* height: 90%; */
+    background-color: #6E3DD6;
+    /* margin: auto; */
+    border-radius: 2rem;
+    position: relative;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+    /* .fa-solid {
+        all: unset;
+    } */
+
+.fa-clock-rotate-left,
+.fa-delete-left {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    line-height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(40, 40, 40, 0.35);
+    color: #fff;
+}
+
+.screen {
+    height: 6rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.screen small {
+    font-weight: bold;
+    color: #B9A3EC;
+    font-size: .9rem;
+}
+
+/* .screen div {
+    overflow-x: scroll;
+    margin-top: 1rem;
+}*/
+
+.screen h1 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin: auto;
+}
+
+.keypad {
+    background-color: white;
+    padding: 1.4rem 1rem;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    height: 23rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+    grid-gap: .5rem;
+}
+
+.keypad button {
+    background-color: #E6E7E8;
+    border-radius: 1.5rem;
+    font-size: 1.65rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #808285;
+    border: none;
+}
+
+.keypad .key-c {
+    background-color: #FA386B;
+    color: #fff;
+}
+
+.keypad .op {
+    color: #222222;
+}
+
+.keypad .op-equal {
+    background-color: #30C117;
+    color: #fff;
+}
+
+button:focus {
+    outline: none;
+}
