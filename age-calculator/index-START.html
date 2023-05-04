@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@600;800;900&display=swap');
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Urbanist', sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        /* h1 {
+            text-align: center;
+            margin-top: 50px;
+        } */
+
+        .wrapper {
+            max-width: 500px;
+            max-height: 47.5%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            border-bottom-right-radius: 100px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            top: 25%;
+        }
+
+        form {
+            max-width: 90%;
+            height: fit-content;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            /* margin: auto; */
+        }
+
+        label {
+            display: block;
+            text-transform: uppercase;
+            font-size: .8rem;
+            margin-bottom: .25rem;
+            letter-spacing: .75px;
+            color: #888;
+            font-weight: 600;
+        }
+
+        small {
+            display: block;
+            margin-top: .5rem;
+            font-size: x-small;
+            color: red;
+            font-style: italic;
+            display: none;
+        }
+
+        input[type="text"] {
+            width: 100px;
+            padding: 5px 10px;
+            margin-right: 10px;
+            border-radius: 2.5px;
+            border: 1px solid #ccc;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        hr {
+            width: 82.5%;
+            margin: 1.5rem 0 0;
+            border: thin solid #f0f0f0;
+            position: relative;
+            left: 1.5rem;
+        }
+
+        input[type="submit"] {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover,
+        input[type="submit"]:focus {
+            background-color: #3e8e41;
+        }
+
+        .error {
+            color: red;
+            margin-top: 5px;
+        }
+
+        .print {
+            width: 90%;
+            margin: 1.25rem 1.5rem;
+        }
+
+        .print p {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin: 0;
+            line-height: 1;
+            letter-spacing: 1px;
+            word-spacing: -10px;
+            font-style: italic;
+        }
+
+        .print span {
+            color: rgb(180, 0, 180);
+        }
+
+        .material-icons {
+            width: 3rem;
+            height: 3rem;
+            background-color: rgb(180, 0, 180);
+            color: #fff;
+            border-radius: 50%;
+            line-height: 2;
+            text-align: center;
+            position: absolute;
+            top: 25%;
+            right: 5%;
+            transform: translate(5%, -20%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <form>
+            <div>
+                <label for="day">Day</label>
+                <input type="text" id="day" name="day" required>
+                <small>Must be a valid day</small>
+            </div>
+            <div>
+                <label for="month">Month</label>
+                <input type="text" id="month" name="month" required>
+                <small>Must be a valid month</small>
+            </div>
+            <div>
+                <label for="year">Year</label>
+                <input type="text" id="year" name="year" required>
+                <small>Must be a valid year</small>
+            </div>
+
+            <!-- <input type="submit" value="Calculate Age"> -->
+            <span class="material-icons">
+                expand_more
+            </span>
+        </form>
+
+        <hr>
+
+        <div class="print">
+            <p id="calculated-year"><span>38</span> years</p>
+            <p id="calculated-month"><span>3</span> months</p>
+            <p id="calculated-day"><span>26</span> days</p>
+        </div>
+    </div>
+
+    <script>
+        //Le script ici...
+    </script>
+</body>
+
+</html>

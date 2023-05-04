@@ -1,5 +1,4 @@
 // get DOM elements
-// obtenir des éléments du DOM
 const hourInput = document.getElementById('hour'),
     minuteInput = document.getElementById('minute'),
     secondInput = document.getElementById('second'),
@@ -17,67 +16,80 @@ let timer,
     countdown,
     totalSeconds;
 
-// create function to set the initial state of the app
-//fonction de création pour définir l'état initial de l'application
+// create funtion to set the initial state of the app
 function initialize() {
-    //votre code ici...
+    timerHour.textContent = "00";
+    timerMinute.textContent = "00";
+    timerSecond.textContent = "00";
+    /* hourInput.value = "00";
+    minuteInput.value = "00";
+    secondInput.value = "00"; */
+    timerScreen.style.display = "none";
 }
 
 // set the format of the countdown time display
-// définir le format d'affichage du compte à rebours
 function formatTime(time) {
-    //votre code ici...
+    if (time < 10) {
+        time = "0" + time;
+    }
+    return time;
 }
 
 // start the countdown timer
-// démarrer le compte à rebours
 function startCountdown() {
-    // calculate the total seconds, based on the user's inpput
-    // calculer le nombre total de secondes, sur la base de l'entrée de l'utilisateur
+    //calculate the total seconds, based on the user's inpput
     totalSeconds = hourInput.value * 3600 + minuteInput.value * 60 + secondInput.value * 1;
-
     // disable the Set Timer button...
-    // désactiver le bouton Set Timer...
-
-    // countdown = ...
+    countdown = setInterval(() => {
+        totalSeconds--;
+        const hours = Math.floor(totalSeconds / 3600),
+            minutes = Math.floor((totalSeconds - hours * 3600) / 60),
+            seconds = totalSeconds % 60;
+        timerHour.textContent = formatTime(hours);
+        timerMinute.textContent = formatTime(minutes);
+        timerSecond.textContent = formatTime(seconds);
+        if (totalSeconds === 0) {
+            clearInterval(countdown);
+        }
+    }, 1000);
 }
 
 // function to stop the countdown using the stop icon
-// pour arrêter le compte à rebours à l'aide de l'icône d'arrêt
 function stopCountdown() {
-    // le code ici...
+    clearInterval(countdown);
+    initialize;
 }
 
 // function to pause the countdown using the pause icon
-// pour interrompre le compte à rebours à l'aide de l'icône de pause
 function pauseCountdown() {
-    // le code ici...
+    clearInterval(countdown);
 }
 
 // handle the click event for the Start button
-// gérer l'événement de clic pour le bouton Start
 startBtn.addEventListener("click", () => {
-    // le code ici...
+    startScreen.style.display = "none";
+    timerScreen.style.display = "grid";
+    startCountdown();
 });
 
 // handle the click event for the Stop button
-// gérer l'événement de clic pour le bouton Stop
 stopBtn.addEventListener("click", () => {
-    // le code ici...
+    stopCountdown();
+    //timerScreen.style.display = "none";
+    //startScreen.style.display = "grid";
 });
 
 // handle the click event for the Pause button
-// gérer l'événement de clic pour le bouton Pause
 pauseBtn.addEventListener("click", () => {
-    // le code ici...
+    pauseCountdown();
 });
 
 // handle the click event for the Set Timer button
-// gérer l'événement de clic pour le bouton Set Timer
 setBtn.addEventListener("click", () => {
-    // le code ici...
+    stopCountdown();
+    timerScreen.style.display = "none";
+    startScreen.style.display = "grid";
 });
 
 // initialize the app
-// initialiser l'application
-//initialize();
+initialize();

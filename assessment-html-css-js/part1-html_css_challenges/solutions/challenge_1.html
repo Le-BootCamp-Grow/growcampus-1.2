@@ -1,0 +1,90 @@
+<!-- Challenge 1: HTML forms and validation -->
+<!-- main.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 1: HTML forms and validation</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: auto;
+        }
+
+        label {
+            margin: 10px 0;
+        }
+
+        input {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 2rem;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Challenge 1: HTML forms and validation</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" required>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        const form = document.querySelector('form');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirm-password');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = emailInput.value;
+            const password = passwordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const isValidEmail = emailRegex.test(email);
+
+            if (isValidEmail && password === confirmPassword) {
+                // Form submission successful
+                console.log('Form submission successful!');
+                form.reset();
+            } else {
+                // Form submission failed
+                if (!isValidEmail) {
+                    emailInput.classList.add('error');
+                } else {
+                    emailInput.classList.remove('error');
+                }
+
+                if (password !== confirmPassword) {
+                    passwordInput.classList.add('error');
+                    confirmPasswordInput.classList.add('error');
+                } else {
+                    passwordInput.classList.remove('error');
+                    confirmPasswordInput.classList.remove('error');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
