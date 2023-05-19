@@ -2,6 +2,9 @@
 
 ### EN
 
+### Author: Gidbecxa
+### Projects by: Gidbecxa, Lead Instructor at Growcampus
+
 > Pour lire en français, veuillez faire défiler la page.
 
 This repository contains selected projects and activities from our first Growcampus Entry-level Web Bootcamp after our full launch in March 2023, which took place from April to May 2023.
