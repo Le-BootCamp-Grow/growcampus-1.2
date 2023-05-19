@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            width: 50px;
+            padding: 5px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover,
+        input[type="submit"]:focus {
+            background-color: #3e8e41;
+        }
+
+        .error {
+            color: red;
+            margin-top: 5px;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label for="day">Day:</label>
+        <input type="text" id="day" name="day" required>
+
+        <label for="month">Month:</label>
+        <input type="text" id="month" name="month" required>
+
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" required>
+
+        <input type="submit" value="Calculate Age">
+    </form>
+
+    <p id="result"></p>
+    
+    <script>
+        function calculateAge() {
+            var day = document.getElementById("day").value;
+            var month = document.getElementById("month").value;
+            var year = document.getElementById("year").value;
+
+            var today = new Date();
+            var birthdate = new Date(year, month - 1, day);
+
+            if (birthdate.getFullYear() != year || birthdate.getMonth() + 1 != month || birthdate.getDate() != day) {
+                document.getElementById("result").innerHTML = "Invalid date";
+                return;
+            }
+
+            if (birthdate > today) {
+                document.getElementById("result").innerHTML = "Birthdate is in the future";
+                return;
+            }
+
+            var years = today.getFullYear() - birthdate.getFullYear();
+            var months = today.getMonth() - birthdate.getMonth();
+            var days = today.getDate() - birthdate.getDate();
+
+            if (months < 0 || (months == 0 && days < 0)) {
+                years--;
+                months += 12;
+                if (days < 0) {
+                    months--;
+                    days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+                }
+            }
+
+            document.getElementById("result").innerHTML = "You are " + years + " years, " + months + " months, and " + days + " days old.";
+        }
+
+        document.querySelector("form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            calculateAge();
+        });
+    </script>
+</body>
+
+</html>

@@ -7,11 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Age Calculator</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
-
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap');
-
+        @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@600;800;900&display=swap');
+        
         * {
             box-sizing: border-box;
         }
@@ -20,7 +18,7 @@
             width: 100%;
             height: 100vh;
             margin: 0;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Urbanist', sans-serif;
             background-color: #f2f2f2;
         }
 
@@ -30,7 +28,7 @@
         } */
 
         .wrapper {
-            max-width: 512px;
+            max-width: 500px;
             max-height: 47.5%;
             margin: auto;
             background-color: #fff;
@@ -44,11 +42,10 @@
 
         form {
             max-width: 90%;
-            /* height: fit-content; */
+            height: fit-content;
             display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            padding-left: 1.5rem;
+            justify-content: space-around;
+            align-items: center;
             /* margin: auto; */
         }
 
@@ -59,41 +56,37 @@
             margin-bottom: .25rem;
             letter-spacing: .75px;
             color: #888;
-            font-weight: 400;
+            font-weight: 600;
         }
 
         small {
             display: block;
-            /* margin-top: .5rem; */
+            margin-top: .5rem;
             font-size: x-small;
-            color: hsl(0, 100%, 67%);
+            color: red;
             font-style: italic;
-            position: relative;
-            top: .5rem;
             display: none;
         }
 
         input[type="text"] {
             width: 100px;
             padding: 5px 10px;
-            margin-right: 1rem;
-            border-radius: 4px;
+            margin-right: 10px;
+            border-radius: 2.5px;
             border: 1px solid #ccc;
-            font-size: 1.5rem;
-            font-weight: 700;
-            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
         }
 
         hr {
-            width: 85%;
+            width: 82.5%;
             margin: 1.5rem 0 0;
             border: thin solid #f0f0f0;
             position: relative;
             left: 1.5rem;
-            z-index: 1;
         }
 
-        /* input[type="submit"] {
+        input[type="submit"] {
             margin-top: 10px;
             padding: 10px 20px;
             border-radius: 5px;
@@ -106,49 +99,44 @@
         input[type="submit"]:hover,
         input[type="submit"]:focus {
             background-color: #3e8e41;
-        } */
+        }
 
         .error {
-            color: rgb(255, 87, 87);
+            color: red;
             margin-top: 5px;
         }
 
         .print {
             width: 90%;
-            margin: 1.25rem 1rem;
+            margin: 1.25rem 1.5rem;
         }
 
         .print p {
             font-size: 3.5rem;
-            font-weight: 800;
+            font-weight: 900;
             margin: 0;
             line-height: 1;
             letter-spacing: 1px;
-            word-spacing: -8px;
+            word-spacing: -10px;
             font-style: italic;
         }
 
         .print span {
-            color: hsl(259, 100%, 65%);
+            color: rgb(180, 0, 180);
         }
 
         .material-icons {
             width: 3rem;
             height: 3rem;
-            background-color: hsl(259, 100%, 65%);
+            background-color: rgb(180, 0, 180);
             color: #fff;
             border-radius: 50%;
+            line-height: 2;
             text-align: center;
             position: absolute;
-            top: 30%;
+            top: 25%;
             right: 5%;
-            transform: translate(5%, -30%);
-            cursor: pointer;
-            z-index: 3;
-        }
-
-        .material-icons svg {
-            width: 50%;
+            transform: translate(5%, -20%);
         }
     </style>
 </head>
@@ -156,43 +144,40 @@
 <body>
     <div class="wrapper">
         <form>
-            <div class="day-field">
+            <div>
                 <label for="day">Day</label>
-                <input type="text" id="day" name="day" placeholder="DD" required>
-                <small class="error-message">Must be a valid day</small>
+                <input type="text" id="day" name="day" required>
+                <small>Must be a valid day</small>
             </div>
-            <div class="month-field">
+            <div>
                 <label for="month">Month</label>
-                <input type="text" id="month" name="month" placeholder="MM" required>
-                <small class="error-message">Must be a valid month</small>
+                <input type="text" id="month" name="month" required>
+                <small>Must be a valid month</small>
             </div>
-            <div class="year-field">
+            <div>
                 <label for="year">Year</label>
-                <input type="text" id="year" name="year" placeholder="YYYY" required>
-                <small class="error-message">Must be a valid year</small>
+                <input type="text" id="year" name="year" required>
+                <small>Must be a valid year</small>
             </div>
 
             <!-- <input type="submit" value="Calculate Age"> -->
             <span class="material-icons">
-                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44">
-                    <g fill="none" stroke="#FFF" stroke-width="2">
-                        <path
-                            d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44" />
-                    </g>
-                </svg>
+                expand_more
             </span>
         </form>
 
         <hr>
 
         <div class="print">
-            <p><span id="calculated-year">00</span> years</p>
-            <p><span id="calculated-month">0</span> months</p>
-            <p><span id="calculated-day">00</span> days</p>
+            <p id="calculated-year"><span>38</span> years</p>
+            <p id="calculated-month"><span>3</span> months</p>
+            <p id="calculated-day"><span>26</span> days</p>
         </div>
     </div>
 
-    <script src="./script.js"></script>
+    <script>
+        //Le script ici...
+    </script>
 </body>
 
 </html>

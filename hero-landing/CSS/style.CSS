@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@400;600;700&display=swap');
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+header {
+    padding: 0 2rem;
+    width: 100%;
+    height: 92%;
+    position: relative;
+}
+
+header nav {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 8px 0; */
+    position: relative;
+}
+
+header .design {
+    height: 100%;
+}
+
+header nav h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    margin: 0;
+    line-height: 50px;
+}
+
+menu {
+    display: flex;
+    list-style: none;
+    height: 100%;
+    margin: 0;
+    align-items: center;
+}
+
+menu li {
+    width: 7.5rem;
+    line-height: 40px;
+    text-align: center;
+}
+
+menu>li>a {
+    text-decoration: none;
+    color: #6F6F6F;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.menu-icon {
+    font-size: 1.75rem;
+}
+
+header .hero {
+    width: 100%;
+    height: 96.5%;
+    position: relative;
+}
+
+.texte {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform: translateX(-15%);
+    z-index: 3;
+    font-family: 'Inter', sans-serif;
+}
+
+.texte .gras {
+    line-height: 1px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.rond {
+    width: 500px;
+    height: 500px;
+    background: #ffbb01;
+    border-radius: 50%;
+    /* margin: 0 auto; */
+    position: relative;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.image {
+    width: 70rem;
+    height: auto;
+    position: absolute;
+    bottom: -2.75%;
+    left: 50%;
+    transform: translate(-50%, 2%);
+    z-index: 1;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hero .grand-text {
+    z-index: 3;
+    position: absolute;
+    top: 35%;
+    right: 19%;
+    transform: translate(5%, -35%);
+}
+
+.grand-text h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 60px;
+    margin: 0;
+}
+
+.footer {
+    width: 95vw;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: -2rem;
+}
+
+.footer .petit-text {
+    font-size: 20px;
+    letter-spacing: -1px;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer .fa-brands {
+    font-size: 2rem;
+}
