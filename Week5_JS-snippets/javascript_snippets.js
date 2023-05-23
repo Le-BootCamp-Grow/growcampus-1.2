@@ -122,8 +122,97 @@ function rollTheDice() {
 
 rollTheDice()
 
+//Working with date
 var today = new Date();
 today
 Date()
 var birthdate = new Date(year, month - 1, day);
 birthdate
+
+// Function to calculate the exact age in years, months and days
+function calculateAge(day, month, year) {
+    //var day = '24';
+    //var month = '09';
+    //var year = '1984';
+    var today = new Date();
+    var birthdate = new Date(year, month - 1, day);
+    //console.log(`Birthdate : ${birthdate}`)
+    console.log(birthdate)
+
+    console.log(birthdate.getFullYear());
+    console.log(birthdate.getMonth() + 1);
+    console.log(birthdate.getDate());
+
+    if (birthdate.getFullYear() != year || birthdate.getMonth() + 1 != month || birthdate.getDate() != day) {
+        console.log('The date is invalid');
+        return;
+    }
+
+    if (birthdate > today) {
+        console.log('Must be in the past');
+        return;
+    }
+
+    var years = today.getFullYear() - birthdate.getFullYear();
+    var months = today.getMonth() - birthdate.getMonth();
+    var days = today.getDate() - birthdate.getDate();
+
+    if (days < 0) {
+        months--;
+        days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+    }
+
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    return (`You are ${years} years, ${months} months, and ${days} days`)
+}
+
+calculateAge('11', '04', '2003');
+
+// Calculating the sum of an array of numbers
+let chiffresArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+chiffres
+let sumChiffres = chiffres.reduce((acc, val) => acc + val);
+console.log(sumChiffres)
+
+//Function to calculate the average of an array of numbers
+function findAverage(array) {
+    return `Average = ${array.reduce((acc, val) => acc + val) / array.length}`
+}
+let donnees = [5, 10, 15, 25, 30, 35]
+findAverage(donnees)
+
+//A dice game program using the rollTheDice function
+const player1Dice = rollTheDice();
+console.log(player1Dice)
+const player2Dice = rollTheDice();
+console.log(player2Dice)
+
+function findWinner(dice_1, dice_2) {
+  const player1Result = dice_1.reduce((acc, val) => acc + val);
+  const player2Result = dice_2.reduce((acc, val) => acc + val);
+  
+  if (player1Result > player2Result) {
+      return 'Player 1 wins!';
+      } else if (player2Result > player1Result) {
+        return 'Player 2 wins !';
+      } else {
+        return 'It is a tie !'
+      }
+}
+
+findWinner(player1Dice, player2Dice)
+
+// Function to calculate the mean/average of an array using for loop
+function getMean(numArr) {
+    let sum = 0;
+    for (let i = 0; i < numArr.length; i++) {
+        sum += numArr[i];
+    }
+    return sum / numArr.length;
+}
+let data = [12, 24, 36, 48, 60];
+getMean(data)

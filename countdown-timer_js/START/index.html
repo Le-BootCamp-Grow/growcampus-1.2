@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown App | Growcampus 1.2</title>
+    <link rel="stylesheet" href="style/style_start.css">
+    <link rel="stylesheet" href="style/style_timer.css">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <script src="https://kit.fontawesome.com/3357889f5c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container screen-1">
+        <h3>Every second counts: stay excited with our countdown app!</h3>
+        <form>
+            <fieldset>
+                <input type="number" id="hour" min="0" max="23" step="1" required>
+                <hr>
+                <label for="hour">Hours</label>
+            </fieldset>
+            <fieldset>
+                <input type="number" id="minute" min="0" max="59" step="1" required>
+                <hr>
+                <label for="minute">Minutes</label>
+            </fieldset>
+            <fieldset>
+                <input type="number" id="second" min="0" max="59" step="1" required>
+                <hr>
+                <label for="second">Seconds</label>
+            </fieldset>
+            <button id="start-btn">Start</button>
+        </form>
+    </div>
+
+    <div class="container screen-2">
+        <h3>Every second counts: stay excited with our countdown app!</h3>
+
+        <div class="timer-container">
+            <div class="timer">
+                <h2 id="timer-hour">12</h2>
+                <p>:</p>
+                <h2 id="timer-minute">50</h2>
+                <p>:</p>
+                <h2 id="timer-second">50</h2>
+            </div>
+            <div class="icons-container">
+                <!-- <span style="color: #b80000;" class="material-icons" id="stop-btn">
+                    stop
+                </span> -->
+                <i style="color: #b80000;" class="fa-solid fa-stop" id="stop-btn"></i>
+                <!-- <span style="color: #c4c400;" class="material-icons" id="pause-btn">
+                    pause_circle
+                </span> -->
+                <i style="color: #d3be00;" class="fa-solid fa-pause" id="pause-btn"></i>
+            </div>
+        </div>
+
+        <button id="set-btn">Set Timer</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

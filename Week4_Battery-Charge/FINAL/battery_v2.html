@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery Charging 2</title>
+    <script src="https://kit.fontawesome.com/3357889f5c.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 12px;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: #0c0914;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .battery-container {
+            width: 220px;
+            height: 360px;
+            /* background-color: #eee; */
+            border: thick solid #fff;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+            padding: 5px 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .battery-level {
+            width: 95%;
+            height: 0%;
+            background-color: rgba(142, 73, 221, 0.8);
+            /* position: absolute;
+            bottom: 1.5%;
+            left: 50%;
+            transform: translate(-50%); */
+            border-radius: 20px;
+            transition: height .5s linear;
+        }
+
+        .battery-head {
+            width: 140px;
+            height: 45px;
+            background-color: #fff;
+            border-top-right-radius: 50px;
+            border-top-left-radius: 50px;
+        }
+
+        .battery-text {
+            font-size: 2rem;
+            font-weight: bold;
+            color: whitesmoke;
+            /* position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(-50%, -50%); */
+        }
+
+        .fa-bolt {
+            font-size: 48px;
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="battery-text" id="battery-text">0%</div>
+    <div class="battery-container">
+        <div class="battery-level" id="battery-level"></div>
+        <i class="fa-solid fa-bolt"></i>
+    </div>
+    <div class="battery-head"></div>
+
+    <script>
+        const batteryLevel = document.getElementById('battery-level');
+        const batteryText = document.getElementById('battery-text');
+        let percentage = 1;
+        let isCharging = true;
+
+        function updateBatteryLevel() {
+            if (isCharging) {
+                percentage++;
+                if (percentage >= 100) {
+                    isCharging = false;
+                }
+            } else {
+                // percentage--;
+                percentage = 1;
+                if (percentage <= 1) {
+                    isCharging = true;
+                }
+            }
+            batteryLevel.style.height = percentage + '%';
+            batteryText.textContent = percentage + '%';
+        }
+
+        setInterval(updateBatteryLevel, 200);
+
+    </script>
+</body>
+
+</html>

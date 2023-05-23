@@ -1,0 +1,62 @@
+.screen-2 {
+    /* display: none; */
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .screen-2 .timer-container {
+    width: 20rem;
+    height: 20rem;
+    border: thick dotted;
+    border-radius: 50%;
+  
+    grid-column: 1 / 4;
+    grid-row: 2;
+    /*display the form itself in a vertical flex*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .timer-container>.timer {
+    display: flex;
+    min-width: 65%;
+    /* max-width: fit-content; */
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  h2,
+  p {
+    font-size: 4rem;
+    margin: .5rem 0;
+    letter-spacing: -2px;
+  }
+  
+  h2 {
+    padding: 0 2px;
+  }
+  
+  .timer-container>.icons-container {
+    display: flex;
+    width: 65%;
+    justify-content: space-between;
+    padding: 0 5px
+  }
+  
+  .icons-container .fa-solid {
+    font-size: 2.25rem;
+    margin: .25rem 0;
+  }
+  
+  .screen-2>button {
+    grid-column: 1 / 4;
+    grid-row: 3;
+    align-self: end;
+    background-color: #b80000;
+  }
+  
+  .screen-2>button:hover {
+    background-color: #920000;
+  }

@@ -38,8 +38,8 @@ body {
         all: unset;
     } */
 
-.fa-clock-rotate-left,
-.fa-delete-left {
+#history-btn,
+#delete-btn {
     width: 2rem;
     height: 2rem;
     font-size: 1rem;
