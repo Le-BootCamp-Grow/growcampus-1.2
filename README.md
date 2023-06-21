@@ -46,9 +46,9 @@ This project is licensed under the [Apache 2.0](LICENSE).
 This project was created as an exercise for the Growcampus Junior Developer BootCamp. Special thanks to the instructors and mentors for their guidance and support.
 
 ```
-----------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
 FRENCH - FRANÇAIS
------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
 ```
 
 # Form Validation with OTP Exercise
