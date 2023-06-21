@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP</title>
+    <link rel="stylesheet" href="style_v2.css">
+    <link rel="stylesheet" href="popup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Formulaire OTP</h1>
+    <form action="" id="form1">
+        <fieldset class="input-group">
+            <label for="nom">Nom:</label>
+            <input type="text" id="nom" placeholder="Entrez votre nom ici">
+            <div class="error-msg" id="nom-error"></div>
+        </fieldset>
+        <fieldset class="input-group">
+            <label for="prenom">Prénom:</label>
+            <input type="text" id="prenom" placeholder="Entrez votre prénom ici">
+            <div class="error-msg" id="prenom-error"></div>
+        </fieldset>
+        <fieldset class="input-group">
+            <label for="mail">Gmail:</label>
+            <input type="email" id="mail" placeholder="Entrez votre adresse Gmail ici">
+            <div class="error-msg" id="mail-error"></div>
+        </fieldset>
+        <fieldset class="input-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Entrez votre mot de passe ici">
+            <div class="error-msg" id="password-error"></div>
+        </fieldset>
+        <fieldset class="input-group">
+            <label for="tel">Tél:</label>
+            <input type="tel" id="tel" placeholder="Entrez votre numéro ici">
+            <div class="error-msg" id="tel-error"></div>
+        </fieldset>
+        <button type="submit" class="submit-form">Submit</button>
+    </form>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span id="popup-close" class="popup-close">&times;</span>
+            <h2 id="popup-title" class="popup-title">OTP</h2>
+            <p id="popup-message" class="popup-message"></p>
+            <div id="code" class="code"></div>
+            <!-- <button id="popup-okay" class="popup-okay">Confirmer</button> -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
