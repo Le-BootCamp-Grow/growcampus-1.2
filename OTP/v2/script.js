@@ -14,10 +14,10 @@ let popup = document.getElementById("popup");
 let popupTitle = document.getElementById("popup-title");
 let popupMessage = document.getElementById("popup-message");
 let popupClose = document.getElementById("popup-close");
-let code = document.getElementById("code");
-// let popupOkay = document.getElementById("popup-okay");
+// let code = document.getElementById("code");
+let popupOkay = document.getElementById("popup-okay");
 
-const OTP = Math.floor(Math.random () * 999999) + 9999;
+const OTP = Math.floor(Math.random() * 999999) + 9999;
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -92,9 +92,9 @@ function clearErrors() {
 
 function showPopup(email) {
     popupTitle.textContent = "Confirmer";
-    popupMessage.textContent = "Félicitations! Vous vous êtes inscrit! Voici votre code OTP ci-dessous pour accéder à la plateform lors de l'inscription."
-    // popupMessage.textContent = `An authentication code has been sent to ${email}. Please check your email inbox. Click the button below to confirm your number`;
-    code.innerText = OTP;
+    // popupMessage.textContent = "Félicitations! Vous vous êtes inscrit! Voici votre code OTP ci-dessous pour accéder à la plateform lors de l'inscription."
+    popupMessage.textContent = `An authentication code has been sent to ${email}. Please check your email inbox. Click the button below to confirm your number`;
+    // code.innerText = OTP;
     popup.classList.add("show");
 }
 
@@ -102,8 +102,35 @@ function hidePopup() {
     popup.classList.remove("show");
 }
 
-popupClose.addEventListener("click", hidePopup);
+// popupClose.addEventListener("click", hidePopup);
+
 /* popupOkay.addEventListener("click", function () {
     hidePopup();
     window.location.href = "otp.html";
-}) */
+})
+
+popupOkay.addEventListener('click', function () {
+    hidePopup();
+    sendOTP(mailInput.value);
+});
+
+function sendOTP(email) {
+    fetch('/send-otp', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+    })
+        .then((response) => {
+            if (response.ok) {
+                console.log('OTP sent successfully');
+            } else {
+                console.error('Failed to send OTP');
+            }
+        })
+        .catch((error) => {
+            console.error('Error sending OTP:', error);
+        });
+} */
+
