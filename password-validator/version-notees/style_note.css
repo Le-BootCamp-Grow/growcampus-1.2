@@ -1,0 +1,251 @@
+/*
+ * Growcampus|Validation de formulaire avec JavaScript
+ *
+ * style.css
+ * 
+ * Ce fichier contient les styles CSS pour le project validation de mot de passe sur un site d'inscription.
+ * 
+ * Mots clés CSS:
+ * - box-sizing: permet de définir la boîte de modélisation utilisée pour calculer la largeur et la hauteur des éléments. 
+ *   Dans notre cas, nous utilisons 'border-box' pour inclure les bordures et le padding dans la largeur totale de l'élément.
+ * - margin: définit les marges autour des éléments.
+ * - padding: définit l'espacement entre le contenu d'un élément et ses bordures.
+ * - font-family: spécifie la police de caractères utilisée pour le texte.
+ * - background-color: définit la couleur d'arrière-plan.
+ * - width: définit la largeur d'un élément.
+ * - position: définit le type de positionnement utilisé pour un élément.
+ * - top: définit la position verticale d'un élément par rapport à son conteneur de positionnement.
+ * - left: définit la position horizontale d'un élément par rapport à son conteneur de positionnement.
+ * - height: définit la hauteur d'un élément.
+ * - color: définit la couleur du texte.
+ * - text-align: définit l'alignement horizontal du texte.
+ * - box-shadow: ajoute une ombre à un élément.
+ * - text-decoration: définit la décoration du texte, comme le soulignement.
+ * - text-underline-position: définit la position du soulignement du texte.
+ * - max-width: définit la largeur maximale d'un élément.
+ * - margin-top: définit la marge supérieure d'un élément.
+ * - margin-bottom: définit la marge inférieure d'un élément.
+ * - border-radius: définit le rayon des coins arrondis d'un élément.
+ * - font-size: définit la taille de police du texte.
+ * - font-weight: définit l'épaisseur de police du texte.
+ * - display: définit le type d'affichage utilisé pour un élément.
+ * - border: définit la bordure d'un élément.
+ * - background-image: définit une image de fond pour un élément.
+ * - background-position: définit la position de l'image de fond.
+ * - background-repeat: définit la répétition de l'image de fond.
+ * - background-size: définit la taille de l'image de fond.
+ * - cursor: définit le curseur de la souris lorsqu'il survole un élément.
+ * - :disabled: pseudo-sélecteur qui cible les éléments désactivés.
+ * - display: définit le type d'affichage utilisé pour un élément.
+ * - flex-grow: définit la capacité de croissance d'un élément flexible.
+ * - align-items: définit l'alignement des éléments flexibles sur l'axe transversal.
+ * - justify-content: définit l'alignement des éléments flexibles sur l'axe principal.
+ * - position: définit le type de positionnement utilisé pour un élément.
+ * - right: définit la position horizontale d'un élément par rapport à son conteneur de positionnement.
+ * - left: définit la position horizontale d'un élément par rapport à son conteneur de positionnement.
+ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Graphik, sans-serif;
+    background-color: #fff;
+    width: 100vw;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    color: #52bd94;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.navbar svg {
+    height: 100%;
+}
+
+.container {
+    max-width: 35vw;
+    margin: 0 auto;
+    padding: 0 3rem 1rem;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-top: 100px;
+}
+
+h1 {
+    color: #4d4d4d;
+    margin: .4rem;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+h4 {
+    color: #555555;
+    margin: .5rem 0;
+    font-size: .9rem;
+    font-weight: 400;
+}
+
+a {
+    color: #52bd94;
+    text-decoration: underline;
+    text-underline-position: below;
+}
+
+form {
+    text-align: left;
+    padding: 0 12px;
+    margin-top: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #666666;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1.5rem;
+    border-radius: 3px;
+    border: 1px solid #cccccc;
+}
+
+input[type="password"] {
+    background-image: none;
+    padding-right: 30px;
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    margin-bottom: .5rem;
+}
+
+input[type="password"].perfect {
+    background-image: url("correct.png");
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+button {
+    width: 25%;
+    height: 2rem;
+    background-color: #52bd94;
+    border: none;
+    border-radius: 3px;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#passwordStrength {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.bar {
+    flex-grow: 1;
+    height: 6px;
+    background-color: #cccccc;
+    margin-right: 2px;
+    border-radius: 3px;
+}
+
+.bar+.bar {
+    margin-left: 4px;
+}
+
+.bar.good {
+    background-color: #ffcc66;
+}
+
+.bar.strong {
+    background-color: #66cc66;
+}
+
+.bar.perfect {
+    background-color: #52bd94;
+}
+
+.submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.submit label {
+    font-size: small;
+    margin: 0;
+    position: relative;
+    left: -12px;
+}
+
+/*
+ *  Voici quelques explications supplémentaires :
+ *
+ *  box-sizing: border-box; est utilisé pour inclure les bordures et le padding dans la largeur 
+ *  et la hauteur totales des éléments. Cela garantit que les dimensions spécifiées (width, height) sont respectées 
+ *  et n'ajoutent pas de dimensions supplémentaires.
+ *
+ *  La classe .navbar définit les styles pour la barre de navigation en haut de la page. 
+ *  Elle est positionnée en haut de la fenêtre (position: fixed;) et s'étend sur toute la largeur (width: 100%;). 
+ *  La couleur de fond est blanche (background-color: #fff;) 
+ *  avec une ombre légère (box-shadow) pour créer un effet de profondeur.
+ *
+ *  La classe .container définit les styles pour le conteneur principal de la page. 
+ *  Elle utilise une largeur maximale de 35% de la largeur de la fenêtre (max-width: 35vw;), 
+ *  est centrée horizontalement (margin: 0 auto;), et a un espace de remplissage (padding) pour créer une marge intérieure.
+ *
+ *  Les sélecteurs h1 et h4 définissent les styles pour les titres de niveau 1 et 4 respectivement. 
+ *  Ils utilisent des couleurs spécifiques (color) et des tailles de police différentes (font-size).
+ *
+ *  Le sélecteur a définit les styles pour les liens. 
+ *  Il utilise une couleur spécifique (color) et une décoration de texte (text-decoration) 
+ *  avec un soulignement (underline) positionné en dessous (text-underline-position: below;).
+ *
+ *  Les sélecteurs input[type="text"], input[type="email"], input[type="password"] définissent les styles 
+ *  pour les champs de saisie de texte, d'email et de mot de passe. Ils ont une largeur de 100% (width: 100%;), 
+ *  un espace de remplissage (padding), une bordure (border), et une bordure arrondie (border-radius) 
+ *  pour créer un aspect cohérent.
+
+ *  Le sélecteur `input[type="password"].perfect` définit les styles spécifiques pour les champs de mot de passe 
+ *  qui sont considérés comme "parfaits". Il remplace l'image de fond par une image de vérification 
+ *  `background-image: url("correct.png");` pour indiquer que le mot de passe est valide.
+ *
+ *  Le sélecteur `button` définit les styles pour les boutons. Il définit la largeur, la hauteur, la couleur de fond, 
+ *  la bordure, la bordure arrondie, la couleur du texte, le poids de la police, et le curseur au survol.
+ *
+ *  Le sélecteur `button:disabled` définit les styles pour les boutons désactivés. 
+ *  Il modifie la couleur de fond et le curseur pour indiquer qu'ils ne peuvent pas être utilisés.
+ *
+ *  La classe `#passwordStrength` définit les styles pour la barre de force du mot de passe. 
+ *  Elle utilise un affichage en ligne (`display: flex;`) pour aligner les barres horizontalement, 
+ *  et les classes `.bar` définissent les styles pour les différentes barres de force. 
+ *  Les classes `.good`, `.strong` et `.perfect` changent la couleur de fond de chaque barre pour indiquer la force du mot de passe.
+ *
+ *  La classe `.submit` définit les styles pour le bouton de soumission et l'étiquette associée. 
+ *  Elle utilise un affichage en ligne avec alignement centré 
+ *  (`display: flex; align-items: center; justify-content: space-between;`) 
+ *  et une position relative pour ajuster l'étiquette (position: relative; left: -12px;).
+ */

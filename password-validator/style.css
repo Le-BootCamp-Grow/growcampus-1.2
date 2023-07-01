@@ -27,17 +27,6 @@ body {
     height: 100%;
 }
 
-/* .navbar-icon {
-    display: inline-block;
-    font-size: 24px;
-    margin-right: 5px;
-}
-
-.navbar-title {
-    display: inline-block;
-    font-weight: bold;
-} */
-
 .container {
     max-width: 35vw;
     margin: 0 auto;
@@ -100,7 +89,6 @@ input[type="password"] {
 }
 
 input[type="password"].perfect {
-    /* background-color: #a3d06a; */
     background-image: url("correct.png");
 }
 
@@ -110,7 +98,6 @@ input[type="checkbox"] {
 
 button {
     width: 25%;
-    /* padding: 5px 2rem; */
     height: 2rem;
     background-color: #52bd94;
     border: none;
